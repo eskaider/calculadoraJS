@@ -14,20 +14,25 @@ class Calculadora {
         this.valorSuperior = ''
         this.operador = undefined
     }
+
     agregarNumero(numero){
         if(numero === '.' && this.valorInferior.includes ('.'))
         return
         this.valorInferior = this.valorInferior + numero
     }
+
     imprimirDisplay(){
         this.textoValorInferior.innerText = this.valorInferior
         this.textoValorSuperior.innerText = this.valorSuperior
     }
+
     borrar(){
         this.valorInferior = this.valorInferior.slice(0,-1)
     }
+
     elegirOperacion(operador){
-        if(this.valorInferior == '') return
+        if(this.valorInferior == '') 
+        return
         if(this.valorSuperior != '') {
             this.realizarCalculo()
         }
@@ -35,6 +40,7 @@ class Calculadora {
         this.valorSuperior = this.valorInferior
         this.valorInferior = ''
     }
+
     realizarCalculo(){
         let resultado;
         let conversionValorSuperior = parseFloat(this.valorSuperior);
